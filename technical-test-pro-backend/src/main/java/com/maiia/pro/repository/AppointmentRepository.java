@@ -1,14 +1,18 @@
 package com.maiia.pro.repository;
 
-import com.maiia.pro.entity.Appointment;
-import com.maiia.pro.entity.Patient;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.maiia.pro.entity.Appointment;
 
 @Repository
-public interface AppointmentRepository extends CrudRepository<Appointment, String> {
-    List<Appointment> findByPractitionerId(String practitionerId);
+public interface AppointmentRepository extends CrudRepository<Appointment, Integer> {
+    List<Appointment> findByPractitionerId(Integer practitionerId);
     List<Appointment> findAll();
+    List<Appointment> findByPractitionerIdOrderByStartDateAsc(Integer practitionerId);
+    
+    Appointment findByPractitionerIdAndStartDate(Integer practitionerId, LocalDateTime startDate);
 }

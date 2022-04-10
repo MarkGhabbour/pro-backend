@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TimeSlotRepository extends CrudRepository<TimeSlot, String> {
-    List<TimeSlot> findByPractitionerId(String practitionerId);
+public interface TimeSlotRepository extends CrudRepository<TimeSlot, Integer> {
+    List<TimeSlot> findByPractitionerId(Integer practitionerId);
+    List<TimeSlot> findByPractitionerIdOrderByStartDateAsc(Integer practitionerId);
+    
 }

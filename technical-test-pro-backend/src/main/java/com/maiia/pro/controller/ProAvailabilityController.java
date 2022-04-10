@@ -13,12 +13,15 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/availabilities", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProAvailabilityController {
-    @Autowired
-    private ProAvailabilityService proAvailabilityService;
+	@Autowired
+	private ProAvailabilityService proAvailabilityService;
 
-    @ApiOperation(value = "Get availabilities by practitionerId")
-    @GetMapping
-    public List<Availability> getAvailabilities(@RequestParam final Integer practitionerId) {
-        return proAvailabilityService.findByPractitionerId(practitionerId);
-    }
+	@ApiOperation(value = "Get availabilities by practitionerId")
+	@GetMapping
+	public List<Availability> getAvailabilities(@RequestParam final Integer practitionerId) {
+		return proAvailabilityService.findByPractitionerId(practitionerId);
+	}
+
 }
+
+
