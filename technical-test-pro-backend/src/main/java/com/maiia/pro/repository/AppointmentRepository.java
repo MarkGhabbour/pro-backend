@@ -1,5 +1,6 @@
 package com.maiia.pro.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
@@ -12,4 +13,6 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Integ
     List<Appointment> findByPractitionerId(Integer practitionerId);
     List<Appointment> findAll();
     List<Appointment> findByPractitionerIdOrderByStartDateAsc(Integer practitionerId);
+    
+    Appointment findByPractitionerIdAndStartDate(Integer practitionerId, LocalDateTime startDate);
 }
