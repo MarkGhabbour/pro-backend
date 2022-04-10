@@ -34,7 +34,7 @@ public class ProAvailabilityService {
 	public List<Availability> generateAvailabilities(Integer practitionerId) {
 		// TODO : implement this
 		List<TimeSlot> timeSlotList = timeSlotRepository.findByPractitionerIdOrderByStartDateAsc(practitionerId);
-		List<Appointment> bookedAppointmentList = appointmentRepository.findByPractitionerId(practitionerId);
+		List<Appointment> bookedAppointmentList = appointmentRepository.findByPractitionerIdOrderByStartDateAsc(practitionerId);
 
 		List<Availability> freeAvailabilities = new ArrayList<Availability>();
 
