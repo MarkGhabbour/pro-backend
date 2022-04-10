@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface TimeSlotRepository extends CrudRepository<TimeSlot, Integer> {
     List<TimeSlot> findByPractitionerId(Integer practitionerId);
-    //List<TimeSlot> findByPractitionerIdOrderByStartDateAsc(Integer practitionerId);
+    List<TimeSlot> findByPractitionerIdOrderByStartDateAsc(Integer practitionerId);
     
 }
