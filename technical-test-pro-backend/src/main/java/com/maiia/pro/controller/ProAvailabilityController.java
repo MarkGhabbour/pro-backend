@@ -22,11 +22,6 @@ public class ProAvailabilityController {
 		return proAvailabilityService.findByPractitionerId(practitionerId);
 	}
 
-	// testing
-//	@GetMapping("/{practitionerId}")
-//	public List<Availability> getAvailabilitiesT(@PathVariable final Integer practitionerId) {
-//		return proAvailabilityService.generateAvailabilities(practitionerId);
-//	}
 }
 
 
