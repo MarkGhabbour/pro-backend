@@ -196,4 +196,26 @@ class ProAvailabilityServiceTest {
         expectedStartDate.add(startDate.plusMinutes(50));
         assertTrue(availabilitiesStartDate.containsAll(expectedStartDate));
     }
+    
+//    @Test
+//    void generateOptimalAvailabilitiesWithAppointmentOnTwoAvailabilities() {
+//        Practitioner practitioner = practitionerRepository.save(entityFactory.createPractitioner());
+//        LocalDateTime startDate = LocalDateTime.of(2020, Month.FEBRUARY, 5, 11, 0, 0);
+//        timeSlotRepository.save(entityFactory.createTimeSlot(practitioner.getId(), startDate, startDate.plusHours(1)));
+//        appointmentRepository.save(entityFactory.createAppointment(practitioner.getId(),
+//                patient_id,
+//                startDate.plusMinutes(20),
+//                startDate.plusMinutes(35)));
+//
+//        List<Availability> availabilities = proAvailabilityService.generateAvailabilities(practitioner.getId());
+//
+//        assertEquals(3, availabilities.size());
+//
+//        List<LocalDateTime> availabilitiesStartDate = availabilities.stream().map(Availability::getStartDate).collect(Collectors.toList());
+//        ArrayList<LocalDateTime> expectedStartDate = new ArrayList<>();
+//        expectedStartDate.add(startDate);
+//        expectedStartDate.add(startDate.plusMinutes(35));
+//        expectedStartDate.add(startDate.plusMinutes(50));
+//        assertTrue(availabilitiesStartDate.containsAll(expectedStartDate));
+//    }
 }

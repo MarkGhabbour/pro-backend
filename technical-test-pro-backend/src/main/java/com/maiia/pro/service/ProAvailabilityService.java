@@ -18,6 +18,10 @@ public class ProAvailabilityService {
 
 	private static int appointmentDurationInMinutes = 15;
 
+	public static int getAppointmentDurationInMinutes() {
+		return appointmentDurationInMinutes;
+	}
+
 	@Autowired
 	private AvailabilityRepository availabilityRepository;
 

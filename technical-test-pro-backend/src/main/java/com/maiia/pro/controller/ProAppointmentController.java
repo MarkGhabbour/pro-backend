@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.maiia.pro.dto.AppointmentCreationDTO;
+import com.maiia.pro.dto.AppointmentMapper;
 import com.maiia.pro.entity.Appointment;
 import com.maiia.pro.service.ProAppointmentService;
 
@@ -24,7 +25,10 @@ import io.swagger.annotations.ApiOperation;
 public class ProAppointmentController {
 	@Autowired
 	private ProAppointmentService proAppointmentService;
-	
+
+	@Autowired
+	private AppointmentMapper appointmentMapper;
+
 	@ApiOperation(value = "Get appointments by practitionerId")
 	@GetMapping("/{practitionerId}")
 	public List<Appointment> getAppointmentsByPractitioner(@PathVariable final Integer practitionerId) {
@@ -39,7 +43,8 @@ public class ProAppointmentController {
 
 	@ApiOperation(value = "Create appointment")
 	@PostMapping
-	public Appointment createAppointment(@RequestBody Appointment app) {
+	public Appointment createAppointment(@RequestBody AppointmentCreationDTO appDTO) {
+		var app = appointmentMapper.toAppointment(appDTO);
 		return proAppointmentService.createAppointment(app);
 	}
 

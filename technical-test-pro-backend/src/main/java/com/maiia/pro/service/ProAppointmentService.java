@@ -1,19 +1,16 @@
 package com.maiia.pro.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.maiia.pro.entity.Appointment;
 import com.maiia.pro.exception.DuplicationException;
 import com.maiia.pro.exception.NotFoundException;
 import com.maiia.pro.repository.AppointmentRepository;
-import com.maiia.pro.repository.AvailabilityRepository;
 import com.maiia.pro.repository.PatientRepository;
 import com.maiia.pro.repository.PractitionerRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ProAppointmentService {
