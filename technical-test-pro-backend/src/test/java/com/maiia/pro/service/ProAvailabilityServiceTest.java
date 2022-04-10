@@ -50,7 +50,7 @@ class ProAvailabilityServiceTest {
 
 	@Autowired
 	private TimeSlotRepository timeSlotRepository;
-
+	
 	@Test
 	void generateAvailabilities() {
 		Practitioner practitioner = practitionerRepository.save(entityFactory.createPractitioner());
